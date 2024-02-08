@@ -11,7 +11,7 @@ import SwiftUI
 struct Abel_Translator_AppApp: App {
     var body: some Scene {
         WindowGroup {
-            ContentView()
+            TwoPromptersView()
         }
     }
 }

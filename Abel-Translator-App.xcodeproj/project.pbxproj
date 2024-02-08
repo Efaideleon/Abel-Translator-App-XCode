@@ -7,16 +7,18 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		D52A7F8E2B4FA0D50045AAF4 /* TwoPromptersView.swift in Sources */ = {isa = PBXBuildFile; fileRef = D52A7F8D2B4FA0D50045AAF4 /* TwoPromptersView.swift */; };
+		D584BBBC2B5380FC006E0B0F /* PracticingDelete.swift in Sources */ = {isa = PBXBuildFile; fileRef = D584BBBB2B5380FC006E0B0F /* PracticingDelete.swift */; };
 		D5A78DD02B4A2417005A162E /* Abel_Translator_AppApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = D5A78DCF2B4A2417005A162E /* Abel_Translator_AppApp.swift */; };
-		D5A78DD22B4A2417005A162E /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = D5A78DD12B4A2417005A162E /* ContentView.swift */; };
 		D5A78DD42B4A2419005A162E /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = D5A78DD32B4A2419005A162E /* Assets.xcassets */; };
 		D5A78DD72B4A2419005A162E /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = D5A78DD62B4A2419005A162E /* Preview Assets.xcassets */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		D52A7F8D2B4FA0D50045AAF4 /* TwoPromptersView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TwoPromptersView.swift; sourceTree = "<group>"; };
+		D584BBBB2B5380FC006E0B0F /* PracticingDelete.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PracticingDelete.swift; sourceTree = "<group>"; };
 		D5A78DCC2B4A2417005A162E /* Abel-Translator-App.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "Abel-Translator-App.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		D5A78DCF2B4A2417005A162E /* Abel_Translator_AppApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Abel_Translator_AppApp.swift; sourceTree = "<group>"; };
-		D5A78DD12B4A2417005A162E /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
 		D5A78DD32B4A2419005A162E /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		D5A78DD62B4A2419005A162E /* Preview Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = "Preview Assets.xcassets"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
@@ -35,6 +37,7 @@
 		D5A78DC32B4A2417005A162E = {
 			isa = PBXGroup;
 			children = (
+				D584BBBB2B5380FC006E0B0F /* PracticingDelete.swift */,
 				D5A78DCE2B4A2417005A162E /* Abel-Translator-App */,
 				D5A78DCD2B4A2417005A162E /* Products */,
 			);
@@ -52,9 +55,9 @@
 			isa = PBXGroup;
 			children = (
 				D5A78DCF2B4A2417005A162E /* Abel_Translator_AppApp.swift */,
-				D5A78DD12B4A2417005A162E /* ContentView.swift */,
 				D5A78DD32B4A2419005A162E /* Assets.xcassets */,
 				D5A78DD52B4A2419005A162E /* Preview Content */,
+				D52A7F8D2B4FA0D50045AAF4 /* TwoPromptersView.swift */,
 			);
 			path = "Abel-Translator-App";
 			sourceTree = "<group>";
@@ -137,8 +140,9 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				D5A78DD22B4A2417005A162E /* ContentView.swift in Sources */,
+				D52A7F8E2B4FA0D50045AAF4 /* TwoPromptersView.swift in Sources */,
 				D5A78DD02B4A2417005A162E /* Abel_Translator_AppApp.swift in Sources */,
+				D584BBBC2B5380FC006E0B0F /* PracticingDelete.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
