@@ -157,35 +157,46 @@ struct PrompterModel {
     private(set) var numOfSpanishWords: Int = 0
     private(set) var accumulatedSpanishWidth: CGFloat = 0
     private(set) var prompterWidth: CGFloat = Constants.Prompter.widthUsed
+    private(set) var breaklineArray: Array<Bool>
     
     init(expectedLength: Int){
         self.expectedLength = expectedLength
-        print("prompter width: ", prompterWidth)
+        breaklineArray = Array(repeating: false, count: expectedLength)
     }
     
     mutating func addWord(word: String, width: CGFloat) {
-        numOfWords = numOfWords + 1
+        var br: Bool
         accumulatedWidth = accumulatedWidth + width
+        
         if (accumulatedWidth > prompterWidth) {
+            br = true
             words.append(currentRow)
             currentRow = []
             accumulatedWidth = width
+            breaklineArray[numOfWords] = br
         }
         currentRow.append(word)
+        
+        numOfWords = numOfWords + 1
         if (numOfWords == expectedLength){
             words.append(currentRow)
         }
     }
     
     mutating func addspanishWord(word: String, width: CGFloat) {
-        numOfSpanishWords = numOfSpanishWords + 1
+        var br: Bool
         accumulatedSpanishWidth = accumulatedSpanishWidth + width
+        
         if (accumulatedSpanishWidth > prompterWidth) {
+            br = true
             spanishWords.append(currentSpanishRow)
             currentSpanishRow = []
             accumulatedSpanishWidth = width
+            breaklineArray[numOfSpanishWords] = br
         }
         currentSpanishRow.append(word)
+        
+        numOfSpanishWords = numOfSpanishWords + 1
         if (numOfSpanishWords == expectedLength){
             spanishWords.append(currentSpanishRow)
         }
@@ -203,7 +214,21 @@ class PrompterModelView: ObservableObject {
     }
     
     var words: Array<Array<String>> {
-        model.words
+        // When we return the array of array of words it must match with the breakline indications
+        var englishWordsArray: Array<Array<String>> = []
+        var wordCount: Int = 0
+        var currentRow: Array<String> = []
+        for rows in model.words {
+            for _word in rows {
+                if (model.breaklineArray[wordCount]) {
+                    englishWordsArray.append(currentRow)
+                    currentRow = []
+                }
+                currentRow.append(_word)
+                wordCount += 1
+            }
+        }
+        return englishWordsArray
     }
     
     func addSpanishWord(word: String, width: CGFloat) {
@@ -211,7 +236,20 @@ class PrompterModelView: ObservableObject {
     }
     
     var spanishWords: Array<Array<String>> {
-        model.spanishWords
+        var spanishWordsArray: Array<Array<String>> = []
+        var wordCount: Int = 0
+        var currentRow: Array<String> = []
+        for rows in model.spanishWords {
+            for _word in rows {
+                if (model.breaklineArray[wordCount]) {
+                    spanishWordsArray.append(currentRow)
+                    currentRow = []
+                }
+                currentRow.append(_word)
+                wordCount += 1
+            }
+        }
+        return spanishWordsArray
     }
 }
 
