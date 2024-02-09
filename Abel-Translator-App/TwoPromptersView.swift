@@ -226,8 +226,12 @@ class PrompterModelView: ObservableObject {
                 }
                 currentRow.append(_word)
                 wordCount += 1
+                if (wordCount == model.expectedLength) {
+                    englishWordsArray.append(currentRow)
+                }
             }
         }
+        print(englishWordsArray)
         return englishWordsArray
     }
     
@@ -247,8 +251,12 @@ class PrompterModelView: ObservableObject {
                 }
                 currentRow.append(_word)
                 wordCount += 1
+                if (wordCount == model.expectedLength) {
+                    spanishWordsArray.append(currentRow)
+                }
             }
         }
+        print(spanishWordsArray)
         return spanishWordsArray
     }
 }
